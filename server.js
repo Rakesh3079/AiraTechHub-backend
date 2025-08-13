@@ -6,6 +6,9 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("AiraTechHub Backend is running!");
+});
 
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
